@@ -45,8 +45,16 @@ switch (TakeConsoleInt("Введите номер задачи(41, 43): "))
         double b2 = TakeConsoleDouble("Введите b2: ");
         double k1 = TakeConsoleDouble("Введите k1: ");
         double k2 = TakeConsoleDouble("Введите k2: ");
-        double y = (b1 - ((k2 * b2) / k2)) / (k2 - k1);
-        double x = (y - b2) / k2;
-        Console.WriteLine($"y = k1 * x + b1,\ny = k2 * x + b2;\nb1 = {b1}, k1 = {k1}, b2 = {b2}, k2 = {k2} -> ({x};{y})");
+        if (k1 == k2)
+            if (b1 == b2 && k1 == k2)
+                Console.WriteLine("Прямые совпадают");
+            else
+                Console.WriteLine("Прямые параллелmны");
+        else
+        {
+            double y = (b1 - ((k2 * b2) / k2)) / (k2 - k1);
+            double x = (y - b2) / k2;
+            Console.WriteLine($"y = k1 * x + b1,\ny = k2 * x + b2;\nb1 = {b1}, k1 = {k1}, b2 = {b2}, k2 = {k2} -> ({x};{y})");
+        }
         break;
 }
